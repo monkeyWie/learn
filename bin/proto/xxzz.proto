@@ -1,0 +1,26 @@
+﻿option java_package = "protobuf"; 
+
+message ChatMsgRequest {
+    required int32 chanId = 1;  //频道id  1=世界 2=联盟
+    required string msg = 2;
+}
+
+message ChatMsgResponse {
+    required int32 regionId = 1;
+    required int32 chanId = 2;
+    required string msg = 3;     //消息内容
+    required string uname = 4;   //用户名
+    required int64 cup = 5;
+    required int32 type = 6; // 1=系统消息
+    required int32 title = 7;
+}
+
+message CommonResponse {
+	required int32 code = 1;
+	required string msg = 2;
+}
+
+message LoginRequest {
+	required int64 openid = 1;
+	required string secret = 2;
+}
