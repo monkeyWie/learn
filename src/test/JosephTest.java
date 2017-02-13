@@ -13,18 +13,14 @@ public class JosephTest {
 	private final static int m = 3;
 
 	/*
-	 * 复杂度O(NM)
+	 * 复杂度O(N*M)
 	 */
 	private static void test1() {
 		boolean[] array = new boolean[n];
 		int liveCount = array.length;
 		int k = 0;
-		int i = 0;
 		while (liveCount > 1) {
-			if(i==array.length){//从圈头再数过
-				i=0;
-			}
-			for (; i < array.length;i++) {
+			for (int i=0; i < array.length;i++) {
 				if (array[i]) { // 排除出局的人
 					continue;
 				}
@@ -33,7 +29,6 @@ public class JosephTest {
 					array[i] = true; // 出局
 					liveCount--;
 					k = 0;
-					break;
 				}
 			}
 		}
@@ -56,7 +51,7 @@ public class JosephTest {
 	}
 
 	public static void main(String[] args) {
-		//test1();
-		test2();
+		test1();
+		//test2();
 	}
 }
